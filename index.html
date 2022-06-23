@@ -3,109 +3,91 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login</title>
+    <title>Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    <!-- Akhir -->
+    <!-- Akhir Google Fonts-->
+
+    <!-- Icon -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <!-- Akhir Icon -->
 
     <style>
         html, body {
             font-family: "Poppins", sans-serif;
         }
 
-        .container {
-            align-items: center;
-            display: flex;
+        .sidebar-wrapper {
+            background: #0F123F;
             height: 100vh;
-            justify-content: center;
-            width: 100%;
-        }
-
-        .card {
-            background-color: white;
-            box-shadow: 10px 4px 8px 0 rgba(0,0,0,0.2);
-            border-radius: 10px;
-            width: 60%;
-        }
-
-        .row {
-            height: 100%;
-        }
-
-        .img {
-            border-bottom-left-radius: 10px;
-            border-top-left-radius: 10px;
-            height: 100%;
-            object-fit: cover;
-            position: relative;
-            width: 100%;
-        }
-
-        .logo {
-            border-radius: 50px;
-            bottom: 10px;
-            height: 50px;
-            left: 10px;
+            left: 0px;
+            padding: 42px 12px 42px 12px;
             position: absolute;
-            width: 50px;
+            top: 0px;
+            width: 270px;
         }
 
-        .form-control:focus {
-          border:1px solid #377e3c;
-          box-shadow: 0 0 10px #00e08b;
-          outline: none !important;
+        .menu-wrapper {
+            padding-left: 38px;
         }
 
-        .form-label {
-          margin-bottom: 0px;
+        .menu {
+            margin-left: -38px;
+            padding: 15px 0px 1px 38px;
         }
 
-        @media (max-width: 991.98px) { 
-            .card {
-              width: auto;
-            }
+        .menu:hover {
+            background: linear-gradient(90deg, #FF6968 0%, #FFA3A3 100%);
+            border-radius: 10px;
+            box-shadow: 0px 20px 55px rgba(238, 120, 108, 0.25);
+            cursor: pointer;
 
-            .logo {
-              position: relative;
-            }
         }
 
+        .icon {
+            height: 24px;
+            width: 24px;
+        }
     </style>
+
   </head>
   <body>
-    <div class="container">
-        <div class="card">
-            <div class="row">
-                <div class="col-sm-6 d-none d-sm-block">
-                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="" class="img">
-                    <img src="https://flyclipart.com/thumb2/r-png-logo-png-image-209154.png" alt="" class="logo">
-                </div>
-                <div class="col-sm-6 p-5">
-                    <img src="https://flyclipart.com/thumb2/r-png-logo-png-image-209154.png" alt="" class="logo mx-auto d-block">
-                    <h3>Welcome..<br>Please Login..</h3>
-                    <form method="" action="" >
-                        <div class="mb-2">
-                          <label for="username" class="form-label">Username</label>
-                          <input type="text" class="form-control" id="username" required>
-                        </div>
-                        <div class="mb-2">
-                          <label for="password" class="form-label">Password</label>
-                          <input type="password" class="form-control" id="password" required>
-                        </div>
-                        <div class="mb-2 form-check">
-                          <input type="checkbox" class="form-check-input" id="remember">
-                          <label class="form-check-label" for="remember">Remember me</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Login</button>
-                      </form>
-                </div>
+      <!-- Sidebar -->
+      <div class="sidebar-wrapper">
+        <h3 class="text-white text-center mb-5"><strong>Simpeda</strong></h3>
+        <div class="menu-wrapper">
+            <div class="menu">
+                <p class="text-white"><i data-feather="home" class="icon me-3 text-white"></i>Dashboard</p>
+            </div>
+            <div class="menu">
+                <p class="text-white"><i data-feather="server" class="icon me-3 text-white"></i>Data Master</p>
+            </div>
+            <div class="menu">
+                <p class="text-white"><i data-feather="slack" class="icon me-3 text-white"></i>Personalisasi Data</p>
+            </div>
+            <div class="menu">
+                <p class="text-white"><i data-feather="printer" class="icon me-3 text-white"></i>Produksi</p>
+            </div>
+            <div class="menu">
+                <p class="text-white"><i data-feather="file-text" class="icon me-3 text-white"></i>Laporan</p>
+            </div>
+            <div class="menu">
+                <p class="text-white"><i data-feather="settings" class="icon me-3 text-white"></i>Pengaturan</p>
             </div>
         </div>
-    </div>
+      </div>
+      <!-- Akhir Sidebar -->
+    
+
+
+    <!-- Icon -->
+    <script>feather.replace()</script>
+    <!-- Akhir Icon -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   </body>
 </html>

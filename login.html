@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- Akhir -->
+
+    <style>
+        html, body {
+            font-family: "Poppins", sans-serif;
+        }
+
+        .container {
+            align-items: center;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .card {
+            background-color: white;
+            box-shadow: 10px 4px 8px 0 rgba(0,0,0,0.2);
+            border-radius: 10px;
+            width: 60%;
+        }
+
+        .row {
+            height: 100%;
+        }
+
+        .img {
+            border-bottom-left-radius: 10px;
+            border-top-left-radius: 10px;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+            width: 100%;
+        }
+
+        .logo {
+            border-radius: 50px;
+            bottom: 10px;
+            height: 50px;
+            left: 10px;
+            position: absolute;
+            width: 50px;
+        }
+
+        .form-control:focus {
+          border:1px solid #377e3c;
+          box-shadow: 0 0 10px #00e08b;
+          outline: none !important;
+        }
+
+        .form-label {
+          margin-bottom: 0px;
+        }
+
+        @media (max-width: 991.98px) { 
+            .card {
+              width: auto;
+            }
+
+            .logo {
+              position: relative;
+            }
+        }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+        <div class="card">
+            <div class="row">
+                <div class="col-sm-6 d-none d-sm-block">
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="" class="img">
+                    <img src="https://flyclipart.com/thumb2/r-png-logo-png-image-209154.png" alt="" class="logo">
+                </div>
+                <div class="col-sm-6 p-5">
+                    <img src="https://flyclipart.com/thumb2/r-png-logo-png-image-209154.png" alt="" class="logo mx-auto d-block">
+                    <h3>Welcome..<br>Please Login..</h3>
+                    <form method="" action="" >
+                        <div class="mb-2">
+                          <label for="username" class="form-label">Username</label>
+                          <input type="text" class="form-control" id="username" required>
+                        </div>
+                        <div class="mb-2">
+                          <label for="password" class="form-label">Password</label>
+                          <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <div class="mb-2 form-check">
+                          <input type="checkbox" class="form-check-input" id="remember">
+                          <label class="form-check-label" for="remember">Remember me</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                      </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+  </body>
+</html>
