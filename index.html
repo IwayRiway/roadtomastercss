@@ -28,7 +28,27 @@
             padding: 42px 12px 42px 12px;
             position: absolute;
             top: 0px;
+            overflow: auto;
             width: 270px;
+        }
+
+        .sidebar-wrapper::-webkit-scrollbar {
+            width: 3px;
+        }
+
+        /* Track */
+        .sidebar-wrapper::-webkit-scrollbar-track {
+            background: #0F123F;
+        }
+
+        /* Handle */
+        .sidebar-wrapper::-webkit-scrollbar-thumb {
+            background: #888;
+        }
+
+        /* Handle on hover */
+        .sidebar-wrapper::-webkit-scrollbar-thumb:hover {
+            background: #555;
         }
 
         .menu-wrapper {
@@ -37,20 +57,33 @@
 
         .menu {
             margin-left: -38px;
-            padding: 15px 0px 1px 38px;
+            padding: 10px 0px 10px 38px;
+            margin-bottom: 5px;
         }
 
-        .menu:hover {
+        .menu>a {
+            text-decoration: none;
+        }
+
+        .menu:hover, .active {
             background: linear-gradient(90deg, #FF6968 0%, #FFA3A3 100%);
             border-radius: 10px;
             box-shadow: 0px 20px 55px rgba(238, 120, 108, 0.25);
             cursor: pointer;
-
         }
 
         .icon {
-            height: 24px;
-            width: 24px;
+            height: 20px;
+            width: 20px;
+        }
+
+        .dropdown-container {
+            background-color: #12175f;
+            display: none;
+            margin-left: -50px;
+            margin-right: -12px;
+            padding-left: 50px;
+            padding-right: 12px;
         }
     </style>
 
@@ -60,23 +93,63 @@
       <div class="sidebar-wrapper">
         <h3 class="text-white text-center mb-5"><strong>Simpeda</strong></h3>
         <div class="menu-wrapper">
+            <div class="menu active">
+                <a href=""><div class="text-white"><i data-feather="home" class="icon me-3"></i>Dashboard</div></a>
+            </div>
+
+            <!-- Data Master -->
+            <div class="menu dropdown-btn">
+                <div class="text-white"><i data-feather="server" class="icon me-3"></i>Data Master</div>
+            </div>
+            <div class="dropdown-container">
+                <div class="menu">
+                    <a href=""><div class="text-white"><i data-feather="truck" class="icon me-3"></i>Kurir</div></a>
+                </div>
+                <div class="menu">
+                    <a href=""><div class="text-white"><i data-feather="bookmark" class="icon me-3"></i>Cabang</div></a>
+                </div>
+                <div class="menu">
+                    <a href=""><div class="text-white"><i data-feather="book" class="icon me-3"></i>Vendor</div></a>
+                </div>
+                <div class="menu">
+                    <a href=""><div class="text-white"><i data-feather="briefcase" class="icon me-3"></i>Status Pengiriman</div></a>
+                </div>
+            </div>
+            <!-- Akhir Data Master -->
+
+            <!-- Personalisasi Data -->
+            <div class="menu dropdown-btn">
+                <div class="text-white"><i data-feather="slack" class="icon me-3"></i>Personalisasi Data</div>
+            </div>
+            <div class="dropdown-container">
+                <div class="menu">
+                    <a href=""><div class="text-white"><i data-feather="edit" class="icon me-3"></i>Input Data SP</div></a>
+                </div>
+                <div class="menu">
+                    <a href=""><div class="text-white"><i data-feather="clipboard" class="icon me-3"></i>Mapping Resi</div></a>
+                </div>
+                <div class="menu">
+                    <a href=""><div class="text-white"><i data-feather="share" class="icon me-3"></i>Upload Data Kurir</div></a>
+                </div>
+                <div class="menu">
+                    <a href=""><div class="text-white"><i data-feather="alert-octagon" class="icon me-3"></i>Oustanding SP</div></a>
+                </div>
+            </div>
+            <!-- Akhir Personalisasi Data -->
+
             <div class="menu">
-                <p class="text-white"><i data-feather="home" class="icon me-3 text-white"></i>Dashboard</p>
+                <a href=""><div class="text-white"><i data-feather="printer" class="icon me-3"></i>Produksi</div></a>
             </div>
             <div class="menu">
-                <p class="text-white"><i data-feather="server" class="icon me-3 text-white"></i>Data Master</p>
+                <a href=""><div class="text-white"><i data-feather="file-text" class="icon me-3"></i>Laporan</div></a>
             </div>
-            <div class="menu">
-                <p class="text-white"><i data-feather="slack" class="icon me-3 text-white"></i>Personalisasi Data</p>
+            <div class="menu dropdown-btn">
+                <div class="text-white"><i data-feather="settings" class="icon me-3"></i>Pengaturan</div>
             </div>
-            <div class="menu">
-                <p class="text-white"><i data-feather="printer" class="icon me-3 text-white"></i>Produksi</p>
-            </div>
-            <div class="menu">
-                <p class="text-white"><i data-feather="file-text" class="icon me-3 text-white"></i>Laporan</p>
-            </div>
-            <div class="menu">
-                <p class="text-white"><i data-feather="settings" class="icon me-3 text-white"></i>Pengaturan</p>
+            <div class="dropdown-container">
+                <div class="menu">
+                    <a href=""><div class="text-white"><i data-feather="home" class="icon me-3"></i>Dashboard</div></a>
+                </div>
             </div>
         </div>
       </div>
@@ -87,6 +160,25 @@
     <!-- Icon -->
     <script>feather.replace()</script>
     <!-- Akhir Icon -->
+
+    <!-- Sidebar Dropdown -->
+    <script>
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+        
+        for (i = 0; i < dropdown.length; i++) {
+          dropdown[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var dropdownContent = this.nextElementSibling;
+            if (dropdownContent.style.display === "block") {
+              dropdownContent.style.display = "none";
+            } else {
+              dropdownContent.style.display = "block";
+            }
+          });
+        }
+    </script>
+    <!-- Akhir Sidebar Dropdown -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   </body>
