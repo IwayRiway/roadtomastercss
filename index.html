@@ -19,17 +19,21 @@
     <style>
         html, body {
             font-family: "Poppins", sans-serif;
+            background: #E5E5E5;
         }
 
         .sidebar-wrapper {
             background: #0F123F;
             height: 100vh;
-            left: 0px;
             padding: 42px 12px 42px 12px;
             position: absolute;
-            top: 0px;
+            transition: all 0.3s;
             overflow: auto;
             width: 270px;
+        }
+
+        #sidebar.active {
+            margin-left: -270px;
         }
 
         .sidebar-wrapper::-webkit-scrollbar {
@@ -85,12 +89,27 @@
             padding-left: 50px;
             padding-right: 12px;
         }
+
+        .container {
+            height: 100vh;
+            left: 270px;
+            padding: 40px;
+            position: absolute;
+            top: 0px;
+            transition: all 0.5s;
+            overflow: auto;
+            width: auto;
+        }
+
+        .container-active {
+            margin-left: -270px;
+        }
     </style>
 
   </head>
   <body>
       <!-- Sidebar -->
-      <div class="sidebar-wrapper">
+      <div class="sidebar-wrapper" id="sidebar">
         <h3 class="text-white text-center mb-5"><strong>Simpeda</strong></h3>
         <div class="menu-wrapper">
             <div class="menu active">
@@ -154,8 +173,16 @@
         </div>
       </div>
       <!-- Akhir Sidebar -->
-    
 
+      <div class="container" id="container">
+          <button class="btn btn-sm btn-primary" type="button" id="sidebarCollapse">Hide</button>
+          <h1>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed molestias eius minima aperiam magni ab neque, voluptates ipsa. Voluptatibus delectus minima doloribus excepturi. Dicta deserunt repellendus veniam vitae totam inventore.</h1>
+      </div>
+    
+    
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
     <!-- Icon -->
     <script>feather.replace()</script>
@@ -167,19 +194,28 @@
         var i;
         
         for (i = 0; i < dropdown.length; i++) {
-          dropdown[i].addEventListener("click", function() {
+            dropdown[i].addEventListener("click", function() {
             this.classList.toggle("active");
             var dropdownContent = this.nextElementSibling;
             if (dropdownContent.style.display === "block") {
-              dropdownContent.style.display = "none";
+                dropdownContent.style.display = "none";
             } else {
-              dropdownContent.style.display = "block";
+                dropdownContent.style.display = "block";
             }
-          });
+            });
         }
     </script>
     <!-- Akhir Sidebar Dropdown -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <!-- Toggle Sidebar -->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $('#container').toggleClass('container-active');
+            });
+        });
+    </script>
+    <!-- Akhir Toggle Sidebar-->
   </body>
 </html>
