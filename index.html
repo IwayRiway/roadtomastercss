@@ -104,6 +104,34 @@
         .container-active {
             margin-left: -270px;
         }
+
+        .text-sm {
+            font-size: 10pt !important;
+        }
+
+        .menu-wrapper>select {
+            margin-left: -12px;
+        }
+
+        .logout {
+            bottom: 10px;
+            padding-right: 120px;
+            position: absolute;
+        }
+
+        @media (max-width: 991.98px) { 
+            .sidebar-wrapper {
+                display: none;
+            }
+
+            #sidebar.active {
+                display: block;
+            }
+
+            .container {
+                left: 0px;
+            }
+        }
     </style>
 
   </head>
@@ -111,7 +139,17 @@
       <!-- Sidebar -->
       <div class="sidebar-wrapper" id="sidebar">
         <h3 class="text-white text-center mb-5"><strong>Simpeda</strong></h3>
+
+        <!-- menu-wrapper -->
         <div class="menu-wrapper">
+
+            <select class="form-select mb-4" aria-label="Default select example">
+                <option selected>Pilih DB</option>
+                <option value="1">Adira</option>
+                <option value="2">BCA</option>
+                <option value="3">BAF</option>
+            </select>
+
             <div class="menu active">
                 <a href=""><div class="text-white"><i data-feather="home" class="icon me-3"></i>Dashboard</div></a>
             </div>
@@ -156,21 +194,61 @@
             </div>
             <!-- Akhir Personalisasi Data -->
 
-            <div class="menu">
-                <a href=""><div class="text-white"><i data-feather="printer" class="icon me-3"></i>Produksi</div></a>
+            <!-- Produksi -->
+            <div class="menu dropdown-btn">
+               <div class="text-white"><i data-feather="printer" class="icon me-3"></i>Produksi</div>
             </div>
-            <div class="menu">
-                <a href=""><div class="text-white"><i data-feather="file-text" class="icon me-3"></i>Laporan</div></a>
+            <div class="dropdown-container">
+                <div class="menu">
+                    <a href=""><div class="text-white"><i data-feather="mail" class="icon me-3"></i>Cetak Surat</div></a>
+                </div>
+                <div class="menu">
+                    <a href=""><div class="text-white"><i data-feather="check-square" class="icon me-3"></i>Koreksi</div></a>
+                </div>
             </div>
+            <!-- Akhhir Produksi-->
+
+            <!-- Laporan -->
+            <div class="menu dropdown-btn">
+                <div class="text-white"><i data-feather="file-text" class="icon me-3"></i>Laporan</div>
+            </div>
+            <div class="dropdown-container">
+                <div class="menu">
+                    <a href=""><div class="text-white text-sm"><i data-feather="calendar" class="icon me-3"></i>Pengiriman Pertanggal</div></a>
+                </div>
+                <div class="menu">
+                    <a href=""><div class="text-white text-sm"><i data-feather="target" class="icon me-3"></i>Pengiriman Percabang</div></a>
+                </div>
+            </div>
+            <!-- Akhir Laporan -->
+
+            <!-- Pengaturan -->
             <div class="menu dropdown-btn">
                 <div class="text-white"><i data-feather="settings" class="icon me-3"></i>Pengaturan</div>
             </div>
             <div class="dropdown-container">
                 <div class="menu">
-                    <a href=""><div class="text-white"><i data-feather="home" class="icon me-3"></i>Dashboard</div></a>
+                    <a href=""><div class="text-white"><i data-feather="at-sign" class="icon me-3"></i>Template</div></a>
+                </div>
+                <div class="menu">
+                    <a href=""><div class="text-white"><i data-feather="users" class="icon me-3"></i>User</div></a>
+                </div>
+                <div class="menu">
+                    <a href=""><div class="text-white"><i data-feather="sliders" class="icon me-3"></i>Otoritas</div></a>
+                </div>
+                <div class="menu">
+                    <a href=""><div class="text-white"><i data-feather="user-check" class="icon me-3"></i>Ubah Password</div></a>
                 </div>
             </div>
+            <!-- Akhir Pengaturan -->
+
+            <div class="menu logout">
+                <a href=""><div class="text-white"><i data-feather="log-out" class="icon me-3"></i>Logout</div></a>
+            </div>
+
         </div>
+        <!-- Akhir menu-wrapper -->
+
       </div>
       <!-- Akhir Sidebar -->
 
