@@ -122,14 +122,31 @@
         @media (max-width: 991.98px) { 
             .sidebar-wrapper {
                 display: none;
+                width: 100%;
             }
 
             #sidebar.active {
                 display: block;
+                margin-left: 0px;
+                z-index: 1;
+            }
+
+            .active {
+                background: #0F123F;;
+                border-radius: 0px;
+            }
+
+            .menu-active {
+                background: linear-gradient(90deg, #FF6968 0%, #FFA3A3 100%);
+                border-radius: 10px; 
             }
 
             .container {
                 left: 0px;
+            }
+
+            .container-active {
+                margin-left: 0px;
             }
         }
     </style>
